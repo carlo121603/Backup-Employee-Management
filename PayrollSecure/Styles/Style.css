@@ -1,0 +1,293 @@
+*{
+  font-family: 'Poppins', sans-serif;
+}
+body {
+  background-color: #f5fffa;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #ffffff;
+  color: #ffffff;
+  padding: 10px 20px;
+  height: 100px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-shadow: rgba(69, 125, 88, 1) 1.95px 3px 2.6px;
+}
+
+.logo {
+  margin-left: 20px;
+}
+
+.header .logo {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.header .logo img {
+  height: 210px;
+  width: auto;
+  max-height: 100%;
+  z-index: -1;
+  background: none;
+
+}
+
+.header .toggle-btn {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+.sidebar{
+  height: 100vh;
+  width: 260px;
+  position: fixed;
+  top: 100px;
+  left: 0;
+  background-color: #272727;
+  transition: width 0.3s; /* tranisition when collapsing */
+  overflow-x: hidden;
+  white-space: nowrap;
+}
+
+.sidebar.collapsed {
+  width: 70px;
+}
+
+
+.sidebar a {
+  padding: 10px 15px;
+  text-decoration: none;
+  font-size: 16px;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  transition: 0.3s;
+}
+
+.sidebar a i {
+  min-width: 40px;
+  text-align: center;
+}
+
+.sidebar a span {
+  transition: opacity 0.3s;
+}
+
+.sidebar a:hover {
+  background-color: #457d58;
+  border-radius: 12px;
+}
+
+.sidebar.collapsed a span {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.sidebar a.active {
+  background-color: #457d58;
+  border-radius: 12px;
+  color: #FFFFFF;
+}
+
+.sidebar.collapsed a.active {
+  background-color: #457d58;
+}
+.sidebar a.active:hover {
+  background-color: #457d58;  /* Keeps the hover effect */
+}
+
+.main-content {
+  margin-left: 250px;
+  padding: 150px 30px 20px;
+  transition: margin-left 0.8s;
+  /* padding: 120px 0 10px 30px; */
+}
+
+.main-content.collapsed {
+  margin-left: 70px;
+  
+}
+
+.green-spacer {
+  background-color: #457d58;
+  height: 40px;
+}
+
+.user-welcome {
+  color: #000;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+  color: #fff;
+  text-decoration: none;
+}
+
+.menu-item i:last-child {
+  margin-left: auto;
+  transition: transform 0.3s ease;
+}
+
+.submenu {
+  display: none;
+}
+
+.submenu-item {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  padding: 10px 15px;
+  color: #fff;
+  background-color: #41424c;
+  width: 100%;
+  margin-top: 1px;
+  text-decoration: none;
+}
+
+a.submenu-item.mt-1 {
+  padding-left: 60px;
+}
+
+.submenu-item:hover {
+  background-color: #5f6368;
+}
+
+.submenu-item.active {
+  background-color: #457d58;
+  color: white;
+}
+
+
+
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+  .sidebar {
+    width: 200px;
+  }
+
+  .main-content {
+    margin-left: 200px;
+  }
+
+  .sidebar.collapsed {
+    width: 60px;
+  }
+
+  .main-content.collapsed {
+    margin-left: 60px;
+  }
+}
+
+@media (max-width: 992px) {
+  .sidebar {
+    width: 180px;
+  }
+
+  .main-content {
+    margin-left: 180px;
+  }
+
+  .sidebar.collapsed {
+    width: 50px;
+  }
+
+  .main-content.collapsed {
+    margin-left: 50px;
+  }
+
+  .header .logo img {
+    height: 150px;
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 60px;
+  }
+
+  .main-content {
+    margin-left: 60px;
+  }
+
+  .sidebar.collapsed {
+    width: 60px;
+  }
+
+  .main-content.collapsed {
+    margin-left: 60px;
+  }
+
+  .header .logo img {
+    display: none;
+  }
+
+  .header .toggle-btn {
+    font-size: 20px;
+  }
+
+  .sidebar a span {
+    display: none;
+  }
+
+  .sidebar.collapsed a span {
+    display: none;
+  }
+}
+
+@media (max-width: 576px) {
+  .sidebar {
+    width: 50px;
+  }
+
+  .main-content {
+    margin-left: 50px;
+  }
+
+  .sidebar.collapsed {
+    width: 10px;
+  }
+
+  .main-content.collapsed {
+    margin-left: 50px;
+  }
+
+  .header {
+    height: 100px;
+    padding: 10px;
+  }
+
+  .header .logo {
+    gap: 10px;
+  }
+
+  .header .toggle-btn {
+    font-size: 18px;
+  }
+
+  .main-content {
+    padding: 105px 20px 10px
+  }
+}
